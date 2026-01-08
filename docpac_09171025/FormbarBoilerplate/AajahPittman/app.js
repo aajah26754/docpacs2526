@@ -45,7 +45,6 @@ app.get('/', isAuthenticated, (req, res) => {
     res.render('index', { user: req.session.user });
 
 });
-// Removed the extra closing brace
 app.get('/login', (req, res) => {
     if (req.query.token) {
          let tokenData = jwt.decode(req.query.token);
